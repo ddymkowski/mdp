@@ -3,11 +3,11 @@ from typing import Callable
 import pytest
 from polars import DataType
 
-from mdp.enums import SupportedDataTypes
-from mdp.exceptions import UnsupportedDataTypeException
-from mdp.models import BaseProfile
-from mdp.profile_factory import MetricsHandlerFactory
-from mdp.service import (
+from plmdp.enums import SupportedDataTypes
+from plmdp.exceptions import UnsupportedDataTypeException
+from plmdp.models import BaseProfile
+from plmdp.profile_factory import MetricsHandlerFactory
+from plmdp.service import (
     get_numeric_metrics,
     get_string_metrics,
     get_type_agnostic_metrics,

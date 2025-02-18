@@ -1,10 +1,10 @@
 import polars
 from typing import Callable
 
-from mdp.exceptions import EmptyDataFrameException, NoColumnsToProfile
-from mdp.models.output import ProfilerOutput, ColumnData
-from mdp.profile_factory import MetricsHandlerFactory
-from mdp.models import BaseProfile
+from plmdp.exceptions import EmptyDataFrameException, NoColumnsToProfile
+from plmdp.models.output import ProfilerOutput, ColumnData
+from plmdp.profile_factory import MetricsHandlerFactory
+from plmdp.models import BaseProfile
 
 import logging
 

@@ -5,8 +5,8 @@ from polars import DataType
 from polars.datatypes import Date, Datetime
 import pytest
 
-from mdp.models.date_or_datetime import DateOrDateTimeProfile
-from mdp.service.date_or_datetime import get_date_or_datetime_metrics
+from plmdp.models.date_or_datetime import DateOrDateTimeProfile
+from plmdp.service.date_or_datetime import get_date_or_datetime_metrics
 
 
 @pytest.fixture

@@ -1,7 +1,7 @@
 import dataclasses
 
-from mdp.models.type_agnostic import BaseProfile
-from mdp.primitives import OptionalDateOrDateTime
+from plmdp.models.type_agnostic import BaseProfile
+from plmdp.primitives import OptionalDateOrDateTime
 
 
 @dataclasses.dataclass

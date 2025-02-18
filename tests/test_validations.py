@@ -2,8 +2,8 @@ import polars
 import pytest
 from _pytest.logging import LogCaptureFixture
 
-from mdp.exceptions import EmptyDataFrameException, NoColumnsToProfile
-from mdp.profiler import Profiler
+from plmdp.exceptions import EmptyDataFrameException, NoColumnsToProfile
+from plmdp.profiler import Profiler
 
 
 @pytest.fixture

@@ -7,9 +7,9 @@ from unittest.mock import patch, MagicMock
 
 from polars import Int64, String
 
-from mdp.cli.cli import load_schema_from_cli, load_kwargs, main
-from mdp.exceptions import UnsupportedDataTypeException
-from mdp.models.output import ProfilerOutput
+from plmdp.cli.cli import load_schema_from_cli, load_kwargs, main
+from plmdp.exceptions import UnsupportedDataTypeException
+from plmdp.models.output import ProfilerOutput
 from tests.test_profiler import profiler_output  # noqa: F401
 
 
@@ -45,9 +45,9 @@ def test_load_kwargs_invalid_json() -> None:
 
 
 @patch("argparse.ArgumentParser.parse_args")
-@patch("mdp.cli.data_loader.DataReaderFactory.create")
-@patch("mdp.profiler.Profiler.run_profiling")
-@patch("mdp.cli.formatter.FormatterFactory.get_formatter")
+@patch("plmdp.cli.data_loader.DataReaderFactory.create")
+@patch("plmdp.profiler.Profiler.run_profiling")
+@patch("plmdp.cli.formatter.FormatterFactory.get_formatter")
 def test_main_with_formatters(
         mock_get_formatter: MagicMock,
         mock_run_profiling: MagicMock,

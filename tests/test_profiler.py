@@ -4,9 +4,9 @@ from freezegun import freeze_time
 from polars import String, Date, Float32, read_csv
 import pytest
 
-from mdp.models import DateOrDateTimeProfile, NumericProfile
-from mdp.models.output import ProfilerOutput, ColumnData
-from mdp.profiler import Profiler
+from plmdp.models import DateOrDateTimeProfile, NumericProfile
+from plmdp.models.output import ProfilerOutput, ColumnData
+from plmdp.profiler import Profiler
 from tests.constants import TESTS_RESOURCES
 
 

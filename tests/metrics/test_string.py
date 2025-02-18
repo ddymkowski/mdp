@@ -2,8 +2,8 @@ import polars
 from polars.datatypes import String, Categorical
 import pytest
 
-from mdp.models._string import StringProfile
-from mdp.service import get_string_metrics
+from plmdp.models._string import StringProfile
+from plmdp.service import get_string_metrics
 
 
 @pytest.fixture

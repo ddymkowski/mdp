@@ -4,10 +4,10 @@ from typing import Callable
 import polars
 from polars import DataType
 
-from mdp.enums import SupportedDataTypes
-from mdp.exceptions import UnsupportedDataTypeException
+from plmdp.enums import SupportedDataTypes
+from plmdp.exceptions import UnsupportedDataTypeException
 
-from mdp.models.type_agnostic import BaseProfile
+from plmdp.models.type_agnostic import BaseProfile
 from polars.datatypes import (
     Decimal,
     Float32,
@@ -27,7 +27,7 @@ from polars.datatypes import (
     Datetime,
 )
 
-from mdp.service import (
+from plmdp.service import (
     get_numeric_metrics,
     get_string_metrics,
     get_type_agnostic_metrics,

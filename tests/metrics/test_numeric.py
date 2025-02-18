@@ -16,8 +16,8 @@ from polars.datatypes import (
 )
 import pytest
 
-from mdp.models.numeric import NumericProfile
-from mdp.service import get_numeric_metrics
+from plmdp.models.numeric import NumericProfile
+from plmdp.service import get_numeric_metrics
 
 
 @pytest.fixture

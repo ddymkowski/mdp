@@ -11,7 +11,7 @@ format:
 	. .venv/bin/activate && ruff format .
 
 test:
-	. .venv/bin/activate && pytest --cov=mdp --cov-report=html
+	. .venv/bin/activate && pytest --cov=plmdp --cov-report=html
 
 typecheck:
 	. .venv/bin/activate && mypy .

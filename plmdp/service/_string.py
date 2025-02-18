@@ -1,8 +1,8 @@
 from typing import cast
 
 import polars
-from mdp.models._string import StringProfile
-from mdp.primitives import OptionalInt, OptionalNumeric
+from plmdp.models._string import StringProfile
+from plmdp.primitives import OptionalInt, OptionalNumeric
 
 
 def get_string_metrics(

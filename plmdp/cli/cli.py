@@ -5,12 +5,12 @@ from typing import Any, cast
 
 import polars.datatypes
 
-from mdp.cli.formatter import FormatterFactory
-from mdp.exceptions import UnsupportedDataTypeException
-from mdp.cli.data_loader import str_type_to_polars, DataReaderFactory
-from mdp.models.output import ProfilerOutput
-from mdp.primitives import ColumnName
-from mdp.profiler import Profiler
+from plmdp.cli.formatter import FormatterFactory
+from plmdp.exceptions import UnsupportedDataTypeException
+from plmdp.cli.data_loader import str_type_to_polars, DataReaderFactory
+from plmdp.models.output import ProfilerOutput
+from plmdp.primitives import ColumnName
+from plmdp.profiler import Profiler
 
 
 def load_schema_from_cli(

@@ -3,8 +3,8 @@ from pathlib import Path
 import pytest
 import polars as pl
 
-from mdp.exceptions import UnsupportedDataFileExtension, UnsupportedDataTypeException
-from mdp.cli.data_loader import DataReaderFactory, str_type_to_polars
+from plmdp.exceptions import UnsupportedDataFileExtension, UnsupportedDataTypeException
+from plmdp.cli.data_loader import DataReaderFactory, str_type_to_polars
 
 
 def test_str_type_to_polars_valid() -> None:

@@ -21,7 +21,7 @@ from polars.datatypes import (
     Datetime,
 )
 
-from mdp.exceptions import UnsupportedDataTypeException, UnsupportedDataFileExtension
+from plmdp.exceptions import UnsupportedDataTypeException, UnsupportedDataFileExtension
 
 STR_TO_POLARS_TYPE = {
     "Decimal": Decimal,

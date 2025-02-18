@@ -1,7 +1,7 @@
 import dataclasses
 from datetime import datetime, timezone
 
-from mdp.models import BaseProfile
+from plmdp.models import BaseProfile
 
 
 @dataclasses.dataclass

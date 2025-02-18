@@ -2,7 +2,7 @@ import pytest
 import polars as pl
 from polars import DataType
 
-from mdp.service.type_agnostic import get_type_agnostic_metrics
+from plmdp.service.type_agnostic import get_type_agnostic_metrics
 
 
 @pytest.fixture

@@ -3,7 +3,7 @@ from typing import Literal, Callable
 import json
 import yaml
 
-from mdp.models.output import ProfilerOutput
+from plmdp.models.output import ProfilerOutput
 
 
 class FormatterFactory:

@@ -1,8 +1,8 @@
 import dataclasses
 
 
-from mdp.models.type_agnostic import BaseProfile
-from mdp.primitives import OptionalInt, OptionalNumeric
+from plmdp.models.type_agnostic import BaseProfile
+from plmdp.primitives import OptionalInt, OptionalNumeric
 
 
 @dataclasses.dataclass

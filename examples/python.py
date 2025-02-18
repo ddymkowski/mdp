@@ -1,7 +1,7 @@
 from pathlib import Path
 from pprint import pprint
 
-from mdp import Profiler
+from plmdp import Profiler
 import polars
 
 

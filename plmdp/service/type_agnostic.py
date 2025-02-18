@@ -1,6 +1,6 @@
 import polars
 
-from mdp.models.type_agnostic import BaseProfile
+from plmdp.models.type_agnostic import BaseProfile
 
 
 def get_type_agnostic_metrics(

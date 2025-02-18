@@ -2,8 +2,8 @@ from typing import cast
 
 import polars
 
-from mdp.models.date_or_datetime import DateOrDateTimeProfile
-from mdp.primitives import OptionalDateOrDateTime
+from plmdp.models.date_or_datetime import DateOrDateTimeProfile
+from plmdp.primitives import OptionalDateOrDateTime
 
 
 def get_date_or_datetime_metrics(

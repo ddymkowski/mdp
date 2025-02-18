@@ -2,9 +2,9 @@ from typing import cast
 
 import polars
 
-from mdp.constants import FLOATING_POINT
-from mdp.models.numeric import NumericProfile
-from mdp.primitives import OptionalNumeric
+from plmdp.constants import FLOATING_POINT
+from plmdp.models.numeric import NumericProfile
+from plmdp.primitives import OptionalNumeric
 
 
 def get_numeric_metrics(
