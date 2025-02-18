@@ -5,7 +5,7 @@ on:
 
 jobs:
   build_and_publish:
-    uses: ./.github/workflows/reusable-build.yml
+    uses: ./.github/workflows/reusable.yml
     with:
       publish: true
     secrets:

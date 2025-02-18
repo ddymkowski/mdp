@@ -6,6 +6,6 @@ on:
 
 jobs:
   build:
-    uses: ./.github/workflows/reusable-build.yml
+    uses: ./.github/workflows/reusable.yml
     with:
       publish: false
