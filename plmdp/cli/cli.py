@@ -60,6 +60,7 @@ def main() -> str:
         "--formatter",
         required=False,
         default="json",
+        choices=["yaml", "json"],
         help="Stdout format: json, yaml or raw",
     )
     args = parser.parse_args()

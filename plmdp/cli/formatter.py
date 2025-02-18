@@ -8,16 +8,15 @@ from plmdp.models.output import ProfilerOutput
 
 class FormatterFactory:
     FORMATTERS = {
-        "raw": lambda data: repr(data),
         "json": lambda data: json.dumps(asdict(data), default=str, indent=2),
         "yaml": lambda data: yaml.dump(asdict(data)),
     }
 
     @staticmethod
     def get_formatter(
-        print_format: Literal["raw", "yaml", "json"] = "raw",
+        print_format: Literal["yaml", "json"],
     ) -> Callable[[ProfilerOutput], str]:
         try:
             return FormatterFactory.FORMATTERS[print_format]
         except KeyError:
-            raise ValueError("Unsupported format. Use 'raw', 'json', or 'yaml'.")
+            raise ValueError("Unsupported format. Use 'json' or 'yaml'.")
