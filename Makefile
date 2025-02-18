@@ -5,7 +5,7 @@ install_dev:
 	uv sync
 
 lint:
-	. .venv/bin/activate && ruff check .  &&
+	. .venv/bin/activate && ruff check .
 
 format:
 	. .venv/bin/activate && ruff format .
