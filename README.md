@@ -1,15 +1,20 @@
 # Polars minimal data profiler
 
 ## Overview
-The `pldmp` package provides an efficient and scalable way to perform data profiling using the Polars library. It analyzes datasets to generate various statistical summaries and insights, helping users understand the structure and quality of their data.
+
+The `pldmp` package provides an efficient and scalable way to perform data profiling using the Polars library. It
+analyzes datasets to generate various statistical summaries and insights, helping users understand the structure and
+quality of their data.
 
 ## Features
+
 - Supports a variety of data types, including numeric, string, and datetime.
 - Computes key statistical metrics such as mean, median, standard deviation, and percentiles.
 - Detects missing values, empty fields, and string token distributions.
 - Provides both a Python and a command-line interface (CLI) for easy usage.
 
 ## Installation
+
 ```bash
 pip install plmdp
 ```
@@ -17,6 +22,7 @@ pip install plmdp
 ## Usage
 
 ### Python Example
+
 ```python
 from pathlib import Path
 from pprint import pprint
@@ -29,6 +35,7 @@ if __name__ == "__main__":
     results = Profiler().run_profiling(data)
     pprint(results)
 ```
+#### Example output
 ```python
 ProfilerOutput(rows_count=20,
                column_count=3,
@@ -73,6 +80,7 @@ ProfilerOutput(rows_count=20,
 ```
 
 ### CLI Example
+
 ```bash
 #!/bin/bash
 
@@ -83,6 +91,9 @@ FORMATTER='json'
 
 plmdp --path "$DATA_PATH" --schema="$SCHEMA" --kwargs="$LOADER_KWARGS" --formatter="$FORMATTER"
 ```
+
+#### Example output
+
 ```json
 {
   "rows_count": 20,
@@ -137,18 +148,18 @@ plmdp --path "$DATA_PATH" --schema="$SCHEMA" --kwargs="$LOADER_KWARGS" --formatt
 ```
 
 ## Supported Data Types
+
 The package supports the following Polars data types:
-- Numeric: `Float32`, `Float64`, `Int8`, `Int16`, `Int32`, `Int64`, `Int128`, `UInt8`, `UInt16`, `UInt32`, `UInt64`, `Decimal`
+
+-
+Numeric: `Float32`, `Float64`, `Int8`, `Int16`, `Int32`, `Int64`, `Int128`, `UInt8`, `UInt16`, `UInt32`, `UInt64`, `Decimal`
 - String: `String`, `Categorical`
 - Date/Time: `Date`, `Datetime`
 - Others: `Boolean`
 
 ## Metrics Computed
+
 - **String Profile**: Minimum/maximum/average string length, token counts, empty or whitespace count.
 - **Numeric Profile**: Mean, median, standard deviation, min/max values, and percentiles.
 - **Date/Datetime Profile**: Minimum and maximum values.
 - **Base Profile**: Null values count.
-
-## License
-MIT License
-
