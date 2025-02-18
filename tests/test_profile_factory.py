@@ -22,7 +22,6 @@ from polars.datatypes import (
     Date,
     Datetime,
     Boolean,
-    DataTypeClass,
 )
 
 
@@ -44,7 +43,7 @@ def metrics_handler() -> MetricsHandlerFactory:
 )
 def test_get_profile_type(
     metrics_handler: MetricsHandlerFactory,
-    data_type: DataTypeClass,
+    data_type: DataType,
     expected_profile_type: SupportedDataTypes,
 ) -> None:
     assert metrics_handler.get_profile_type(data_type) == expected_profile_type

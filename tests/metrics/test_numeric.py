@@ -1,7 +1,9 @@
 from dataclasses import asdict
 
 import polars
+from polars import DataType
 from polars.datatypes import (
+    Decimal,
     Float32,
     Float64,
     Int8,
@@ -21,7 +23,7 @@ from plmdp.service import get_numeric_metrics
 
 
 @pytest.fixture
-def numeric_schema() -> dict[str, polars.datatypes.DataTypeClass]:
+def numeric_schema() -> dict[str, type[DataType] | DataType]:
     return {
         "float32_col": Float32,
         "float64_col": Float64,
@@ -34,6 +36,7 @@ def numeric_schema() -> dict[str, polars.datatypes.DataTypeClass]:
         "uint16_col": UInt16,
         "uint32_col": UInt32,
         "uint64_col": UInt64,
+        "decimal_col": Decimal(scale=2),
     }
 
 
@@ -51,6 +54,7 @@ def numeric_data() -> dict[str, list[int | float | None]]:
         "uint16_col": [1, 2, 3, None, 4],
         "uint32_col": [1, 2, 3, None, 4],
         "uint64_col": [1, 2, 3, None, 4],
+        "decimal_col": [1.1, 2.2, 3.3, None, 4.4],
     }
 
 
@@ -217,6 +221,20 @@ def numeric_test_data(
                 percentile25=2,
                 percentile50=3,
                 percentile75=3,
+            ),
+        ),
+        (
+            "decimal_col",
+            NumericProfile(
+                nulls_count=1,
+                mean=2.75,
+                median=2.75,
+                std=1.42,
+                min=1.1,
+                max=4.4,
+                percentile25=2.2,
+                percentile50=3.3,
+                percentile75=3.3,
             ),
         ),
     ],

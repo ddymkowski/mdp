@@ -7,7 +7,9 @@ from unittest.mock import patch, MagicMock
 
 from polars import Int64, String
 
-from plmdp.cli.cli import load_schema_from_cli, load_kwargs, main
+from plmdp.cli.cli import main
+from plmdp.cli.input_utils import load_schema_from_cli, load_kwargs
+
 from plmdp.exceptions import UnsupportedDataTypeException
 from plmdp.models.output import ProfilerOutput
 from tests.test_profiler import profiler_output  # noqa: F401
@@ -49,14 +51,18 @@ def test_load_kwargs_invalid_json() -> None:
 @patch("plmdp.profiler.Profiler.run_profiling")
 @patch("plmdp.cli.formatter.FormatterFactory.get_formatter")
 def test_main_with_formatters(
-        mock_get_formatter: MagicMock,
-        mock_run_profiling: MagicMock,
-        mock_data_reader: MagicMock,
-        mock_parse_args: MagicMock,
-        profiler_output: ProfilerOutput,  # noqa: F811
+    mock_get_formatter: MagicMock,
+    mock_run_profiling: MagicMock,
+    mock_data_reader: MagicMock,
+    mock_parse_args: MagicMock,
+    profiler_output: ProfilerOutput,  # noqa: F811
 ) -> None:
     mock_parse_args.return_value = argparse.Namespace(
-        path="/fake/path.csv", schema=None, kwargs=None, columns_to_ignore=None, formatter="json"
+        path="/fake/path.csv",
+        schema=None,
+        kwargs=None,
+        columns_to_ignore=None,
+        formatter="json",
     )
 
     mock_data_reader.return_value = lambda source, schema, **kwargs: "mock_dataframe"

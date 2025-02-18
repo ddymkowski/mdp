@@ -1,3 +1,4 @@
+from decimal import Decimal
 from typing import cast
 
 import polars
@@ -5,6 +6,14 @@ import polars
 from plmdp.constants import FLOATING_POINT
 from plmdp.models.numeric import NumericProfile
 from plmdp.primitives import OptionalNumeric
+
+
+def safe_round(value: OptionalNumeric, precision: int) -> float | int | None:
+    if value is None:
+        return None
+    if isinstance(value, Decimal):
+        value = float(value)
+    return round(value, precision)
 
 
 def get_numeric_metrics(
@@ -25,18 +34,12 @@ def get_numeric_metrics(
 
     return NumericProfile(
         nulls_count=null_count,
-        mean=round(mean, FLOATING_POINT) if mean is not None else None,
-        median=round(median, FLOATING_POINT) if median is not None else None,
-        std=round(std, FLOATING_POINT) if std is not None else None,
-        min=round(min_value, FLOATING_POINT) if min_value is not None else None,
-        max=round(max_value, FLOATING_POINT) if max_value is not None else None,
-        percentile25=round(percentile25, FLOATING_POINT)
-        if percentile25 is not None
-        else None,
-        percentile50=round(percentile50, FLOATING_POINT)
-        if percentile50 is not None
-        else None,
-        percentile75=round(percentile75, FLOATING_POINT)
-        if percentile75 is not None
-        else None,
+        mean=safe_round(mean, FLOATING_POINT),
+        median=safe_round(median, FLOATING_POINT),
+        std=safe_round(std, FLOATING_POINT),
+        min=safe_round(min_value, FLOATING_POINT),
+        max=safe_round(max_value, FLOATING_POINT),
+        percentile25=safe_round(percentile25, FLOATING_POINT),
+        percentile50=safe_round(percentile50, FLOATING_POINT),
+        percentile75=safe_round(percentile75, FLOATING_POINT),
     )

@@ -7,6 +7,10 @@ import polars
 
 if __name__ == "__main__":
     datafile_path = Path(__file__).resolve().parent / "data.csv"
-    data: polars.DataFrame = polars.read_csv(datafile_path, separator=";")
+    data: polars.DataFrame = polars.read_csv(
+        datafile_path,
+        separator=";",
+        schema={"comment": polars.String, "dob": polars.Date, "sales": polars.Decimal},
+    )
     results = Profiler().run_profiling(data)
     pprint(results)

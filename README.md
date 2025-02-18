@@ -2,7 +2,7 @@
 
 ## Overview
 
-The `pldmp` package provides an efficient and scalable way to perform data profiling using the Polars library. It
+The `pldmp` package provides an easy way to perform data profiling using the Polars library. It
 analyzes datasets to generate various statistical summaries and insights, helping users understand the structure and
 quality of their data.
 
