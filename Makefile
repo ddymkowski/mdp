@@ -1,11 +1,11 @@
-.PHONY: install lint format test typecheck clean
+.PHONY: install lint format test typecheck build
 
 install_dev:
 	uv venv
 	uv sync
 
 lint:
-	. .venv/bin/activate && ruff check .
+	. .venv/bin/activate && ruff check .  &&
 
 format:
 	. .venv/bin/activate && ruff format .
@@ -18,3 +18,6 @@ typecheck:
 
 build:
 	uv build
+
+publish:
+	uv publish --token "$(PYPI_TOKEN)"

@@ -151,8 +151,7 @@ plmdp --path "$DATA_PATH" --schema="$SCHEMA" --kwargs="$LOADER_KWARGS" --formatt
 
 The package supports the following Polars data types:
 
--
-Numeric: `Float32`, `Float64`, `Int8`, `Int16`, `Int32`, `Int64`, `Int128`, `UInt8`, `UInt16`, `UInt32`, `UInt64`, `Decimal`
+- Numeric: `Float32`, `Float64`, `Int8`, `Int16`, `Int32`, `Int64`, `Int128`, `UInt8`, `UInt16`, `UInt32`, `UInt64`, `Decimal`
 - String: `String`, `Categorical`
 - Date/Time: `Date`, `Datetime`
 - Others: `Boolean`
