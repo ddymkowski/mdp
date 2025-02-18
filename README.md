@@ -21,7 +21,7 @@ pip install plmdp
 from pathlib import Path
 from pprint import pprint
 import polars as pl
-from dq import Profiler
+from plmdp import Profiler
 
 if __name__ == "__main__":
     datafile_path = Path(__file__).resolve().parent / "data.csv"
@@ -39,7 +39,7 @@ SCHEMA='{"comment": "String", "dob": "Date", "sales": "Float32"}'
 LOADER_KWARGS='{"separator":";"}'
 FORMATTER='json'
 
-dq --path "$DATA_PATH" --schema="$SCHEMA" --kwargs="$LOADER_KWARGS" --format="$FORMATTER"
+plmdp --path "$DATA_PATH" --schema="$SCHEMA" --kwargs="$LOADER_KWARGS" --format="$FORMATTER"
 ```
 
 ## Supported Data Types

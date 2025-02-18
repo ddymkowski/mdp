@@ -32,4 +32,4 @@ no_implicit_optional = true
 
 
 [project.scripts]
-dq = "plmdp.cli.cli:main"
+plmdp = "plmdp.cli.cli:main"
