@@ -1,7 +1,7 @@
 # Data Quality Profiler
 
 ## Overview
-The `dq` package provides an efficient and scalable way to perform data profiling using the Polars library. It analyzes datasets to generate various statistical summaries and insights, helping users understand the structure and quality of their data.
+The `pldmp` package provides an efficient and scalable way to perform data profiling using the Polars library. It analyzes datasets to generate various statistical summaries and insights, helping users understand the structure and quality of their data.
 
 ## Features
 - Supports a variety of data types, including numeric, string, and datetime.
@@ -11,7 +11,7 @@ The `dq` package provides an efficient and scalable way to perform data profilin
 
 ## Installation
 ```bash
-pip install dq
+pip install plmdp
 ```
 
 ## Usage
